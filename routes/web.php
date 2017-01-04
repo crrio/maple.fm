@@ -12,9 +12,12 @@
 */
 
 // General Routes
-Route::get('/', 'Controller@front')->name('front');
+Route::get('/', 'Controller@home')->name('home');
 Route::get('/about', 'Controller@about')->name('about');
-Route::get('/statistics', 'Controller@statistics')->name('statistics');
+
+// Statistic Routes
+Route::get('/statistics', 'StatisticsController@home')->name('statistics');
+Route::get('/statistics/item/{id}', 'StatisticsController@item')->name('statistics.item');
 
 // Market Routes
 Route::pattern('server', '(scania)|(windia)|(bera)|(khroa)|(mybckn)' .

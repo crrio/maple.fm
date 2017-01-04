@@ -13,15 +13,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function front() {
+    public function home() {
       return view('welcome');
     }
 
     public function about() {
       return view('about');
-    }
-
-    public function statistics() {
-      return view('statistics');
     }
 }
