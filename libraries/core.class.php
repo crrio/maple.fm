@@ -16,7 +16,7 @@ use Cache;
 
 class Core {
 
-    public static function getMarketCounts() {
+    /*public static function getMarketCounts() {
 
         if( Cache::has('marketCounts') ) {
             return Cache::get('marketCounts');
@@ -52,7 +52,7 @@ class Core {
             Cache::put('marketCount_'.$serverId, $response, '1');
             return Cache::get('marketCount_'.$serverId);
         }
-    }
+    }*/
 
     public static function message($text, $color) {
         $message = array();
