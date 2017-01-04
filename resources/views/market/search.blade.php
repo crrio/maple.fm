@@ -660,7 +660,7 @@
                                     '"><img class="lazy" data-original="http://maplestory.io/api/item/' +
                                     val.T + '/icon" alt="' + escapeHtml(val.O) +
                                     '" style="margin-right:5px;"><span style="vertical-align:super;">' + itemName +
-                                    '</span> <a class="chip blue lighten-1 white-text right" href="/db/items/' + val.U + '"><i class="fa fa-chevron-right"></i></li></ul></div>';
+                                    '</span> <a class="chip blue lighten-1 white-text right" href="/statistics/item/' + val.U + '"><i class="fa fa-chevron-right"></i></li></ul></div>';
                             var shopName = val.f;
                             if (shopName.length > 12) {
                                 val.f = shopName.substring(0, 12) + '&hellip;';
