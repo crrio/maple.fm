@@ -483,7 +483,7 @@ $(document).ready(function() {
     }
   });
   // Insert into the data table
-  $.getJSON('http://maplestory.io/api/server/'+ getServerId() +'/market/legacy', function(data) {
+  $.getJSON('http://maplestory.io/api/server/'+ getServerId() +'/market/legacy').then(function(data) {
     var items = [];
     var odd = new Boolean(true);
     $.each(data, function(key, val) {
