@@ -696,7 +696,6 @@
                         setInterval(function () {
                           ++minuteOffset;
                           $('#minute').html(minuteOffset);
-                            console.log('Another minute has passed. (' + minuteOffset + ' minutes)');
                         }, 1000 * 60);
 
                         setInterval(function () {
