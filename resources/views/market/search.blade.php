@@ -743,7 +743,7 @@
                         // Resize columns
                         oTable.fnAdjustColumnSizing();
                         // Re-sort
-                        oTable.fnReloadAjax();
+                        //oTable.fnReloadAjax();
 
                         // Show advanced options
                         $("#select-category").removeClass('hide');
