@@ -202,10 +202,10 @@
                             success: function (data) {
                                 var json_data = JSON.parse(data);
                                 var priorCount = Market.count;
-                                $('#'+ server_name +'').html(json_data);
+                                $('#'+ server_name +'').html(json_data).formatNumber();
                                 Market.count += json_data;
                                 Market.servers[server_name] = json_data;
-                                console.log(data + ' items were added to ' + priorCount + ' to become ' + Market.count + ' items.');
+                                //console.log(data + ' items were added to ' + priorCount + ' to become ' + Market.count + ' items.');
                             }
                         });
                     });
