@@ -35,7 +35,7 @@
             <a class="nav-link" href="/statistics">Statistics</a>
           </li>
           <li class="nav-item">
-            <a class="waves-effect waves-light" href="#markets">Markets</a>
+            <a class="nav-link" href="#markets">Markets</a>
           </li>
         </ul>
         <ul class="side-nav" id="mobile">
@@ -45,7 +45,9 @@
           <li>
             <a class="nav-link" href="/statistics">Statistics</a>
           </li>
-          <li><a class="waves-effect waves-light" href="#markets">Markets</a></li>
+          <li>
+            <a class="nav-link" href="#markets">Markets</a>
+          </li>
         </ul>
       </div>
     </div>
