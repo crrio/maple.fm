@@ -195,7 +195,7 @@
                 } else {
                     $.each(Market.servers, function (server_name, server_item_count) {
                         $.ajax({
-                            url: 'http://maplestory.io/api/world/' + Object.keys(Market.servers).indexOf(server_name).toString() + '/market/itemCount',
+                            url: 'http://maplestory.io/api/server/' + Object.keys(Market.servers).indexOf(server_name).toString() + '/market/itemCount',
                             async: false,
                             success: function (data) {
                                 var json_data = JSON.parse(data);
