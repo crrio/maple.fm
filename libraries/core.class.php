@@ -25,7 +25,7 @@ class Core {
             $market = array();
             $servers = array("scania" => 0, "windia" => 1, "bera" => 2, "khroa" => 3, "mybckn" => 4, "grazed" => 5);
             foreach ($servers as $server => $key) {
-                $response = $api->get('http://maplestory.io/api/world/'.$key.'/market/itemCount')->getBody()->getContents();
+                $response = $api->get('http://maplestory.io/api/server/'.$key.'/market/itemCount')->getBody()->getContents();
                 $market["$server"] = $response;
             }
             Cache::put('marketCounts', $market, '1');
@@ -36,7 +36,7 @@ class Core {
         $market = array();
         $servers = array("scania" => 0, "windia" => 1, "bera" => 2, "khroa" => 3, "mybckn" => 4, "grazed" => 5);
         foreach ($servers as $server => $key) {
-            $response = $api->get('http://maplestory.io/api/world/'.$key.'/market/itemCount')->getBody()->getContents();
+            $response = $api->get('http://maplestory.io/api/server/'.$key.'/market/itemCount')->getBody()->getContents();
             $market["$server"] = $response;
         }
         return $market;
@@ -48,7 +48,7 @@ class Core {
             return Cache::get('marketCount_'.$serverId);
         } else {
             $api = new Client();
-            $response = $api->get('http://maplestory.io/api/world/'.$serverId.'/market/itemCount')->getBody()->getContents();
+            $response = $api->get('http://maplestory.io/api/server/'.$serverId.'/market/itemCount')->getBody()->getContents();
             Cache::put('marketCount_'.$serverId, $response, '1');
             return Cache::get('marketCount_'.$serverId);
         }
@@ -94,7 +94,7 @@ class Core {
         $log->action = $action;
         $log->save();
     }
-    
+
     /* User Functions
     /* Currently disabled until a user system is added.
     public static function userFunc() {

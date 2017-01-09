@@ -35,7 +35,7 @@
             <a class="nav-link" href="/statistics">Statistics</a>
           </li>
           <li class="nav-item">
-            <a class="waves-effect waves-light" href="#markets">Markets</a>
+            <a class="nav-link" href="#markets">Markets</a>
           </li>
         </ul>
         <ul class="side-nav" id="mobile">
@@ -45,7 +45,9 @@
           <li>
             <a class="nav-link" href="/statistics">Statistics</a>
           </li>
-          <li><a class="waves-effect waves-light" href="#markets">Markets</a></li>
+          <li>
+            <a class="nav-link" href="#markets">Markets</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -55,7 +57,7 @@
 <main>
   <div class="container content">
     @if(!Auth::check())
-      <div class="alert-dev blue white-text center" style="font-size:20px;"><b>Hello mapler!</b> Thank you for testing out our public alpha as we craft a better experience for you. Please report any bugs on our <a href="http://github.com/crrio/maple.fm/issues" class="white-text"><u>Github</u></a>! <i class="fa fa-heart"></i>
+      <div class="alert-dev blue white-text center" style="font-size:20px;"><b>Hello mapler!</b> Thank you for testing out our public alpha as we craft a better experience for you. Please report any bugs on our <a href="//github.com/crrio/maple.fm/issues" class="white-text"><u>Github</u></a>! <i class="fa fa-heart"></i>
       </div>
     @endif
       <div class="row">
@@ -195,7 +197,7 @@
                 } else {
                     $.each(Market.servers, function (server_name, server_item_count) {
                         $.ajax({
-                            url: 'http://maplestory.io/api/world/' + Object.keys(Market.servers).indexOf(server_name).toString() + '/market/itemCount',
+                            url: 'http://maplestory.io/api/server/' + Object.keys(Market.servers).indexOf(server_name).toString() + '/market/itemCount',
                             async: false,
                             success: function (data) {
                                 var json_data = JSON.parse(data);
