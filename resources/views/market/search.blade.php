@@ -59,9 +59,9 @@
     <script type="text/javascript" language="javascript" src="/js/codepeg.statFilter.js?r=2"></script>
     <script type="text/javascript" charset="utf-8">
 
-          $(document).ready(function() {
-            $('select').material_select();
-          });
+        $(document).ready(function() {
+          $('select').material_select();
+        });
 
         $('#refresh').click(function() {
           window.location.reload();
@@ -393,7 +393,7 @@
                 },
                 "oLanguage": {
                     "sEmptyTable": '<div class="preloader-wrapper big active" style="margin:20px;"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div>',
-                    "sLengthMenu": '<ul class="list-inline no-bottom unstyled col m6 s12 input-field"><select class="validate">'+
+                    "sLengthMenu": '<ul class="list-inline no-bottom unstyled col m3 s12 input-field right"><select class="validate">'+
                             '<option value="5">5</option>' +
                             '<option value="10">10</option>' +
                             '<option value="20" selected="selected">20</option>' +
@@ -450,7 +450,7 @@
             // Change search input class
             $search = $('div.dataTables_filter input');
             $label = $('div.dataTables_filter label');
-            $search.addClass('validate col m6 s12 input-field item-search');
+            $search.addClass('validate col m9 s12 input-field item-search');
             $search.attr('placeholder', 'Search for item or player name..');
             $search.insertBefore($label);
             $label.remove();
