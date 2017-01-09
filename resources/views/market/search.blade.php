@@ -316,7 +316,7 @@
             $('body').popover({
                 selector: '.item-popover',
                 html: true,
-                trigger: 'click',
+                trigger: 'hover',
                 delay: 100,
                 content: function() {
                     $element = $(this);
