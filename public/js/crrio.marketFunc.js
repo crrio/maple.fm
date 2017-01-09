@@ -68,58 +68,63 @@ function updateStat(cur, base, isEquip) {
  * NOTE:  Data uses verbose names, while val uses compact names.
  */
 function updateItemDetails(val, data) {
-  var e = data.category == 'Equip';
-  if (val.j !== null || data.incSTR !== null) {
-    val.j = updateStat(val.j, data.incSTR, e);
-  }
-  if (val.k !== null || data.incDEX !== null) {
-    val.k = updateStat(val.k, data.incDEX, e);
-  }
-  if (val.l !== null || data.incINT !== null) {
-    val.l = updateStat(val.l, data.incINT, e);
-  }
-  if (val.m !== null || data.incLUK !== null) {
-    val.m = updateStat(val.m, data.incLUK, e);
-  }
-  if (val.n !== null || data.incMHP !== null) {
-    val.n = updateStat(val.n, data.incMHP, e);
-  }
-  if (val.o !== null || data.incMMP !== null) {
-    val.o = updateStat(val.o, data.incMMP, e);
-  }
-  if (val.p !== null || data.incPAD !== null) {
-    val.p = updateStat(val.p, data.incPAD, e);
-  }
-  if (val.q !== null || data.incMAD !== null) {
-    val.q = updateStat(val.q, data.incMAD, e);
-  }
-  if (val.r !== null || data.incPDD !== null) {
-    val.r = updateStat(val.r, data.incPDD, e);
-  }
-  if (val.s !== null || data.incMDD !== null) {
-    val.s = updateStat(val.s, data.incMDD, e);
-  }
-  if (val.t !== null || data.incACC !== null) {
-    val.t = updateStat(val.t, data.incACC, e);
-  }
-  if (val.u !== null || data.incEVA !== null) {
-    val.u = updateStat(val.u, data.incEVA, e);
-  }
-  if (val.v !== null || data.incCraft !== null) {
-    val.v = updateStat(val.v, data.incCraft, e);
-  }
-  if (val.w !== null || data.incSpeed !== null) {
-    val.w = updateStat(val.w, data.incSpeed, e);
-  }
-  if (val.x !== null || data.incJump !== null) {
-    val.x = updateStat(val.x, data.incJump, e);
-  }
-  if (val.C !== null || data.bdR !== null) {
-    val.C = updateStat(val.C, data.bdR, e);
-  }
-  if (val.D !== null || data.imdR !== null) {
-    val.D = updateStat(val.D, data.imdR, e);
-  }
+  var e = data.Equip !== null;
+  var data = data.Equip;
+  //console.log(e);
+  //console.log(data);
+  if (data !== null) {
+      if (val.j !== null || data.incSTR !== null) {
+        val.j = updateStat(val.j, data.incSTR, e);
+      }
+      if (val.k !== null || data.incDEX !== null) {
+        val.k = updateStat(val.k, data.incDEX, e);
+      }
+      if (val.l !== null || data.incINT !== null) {
+        val.l = updateStat(val.l, data.incINT, e);
+      }
+      if (val.m !== null || data.incLUK !== null) {
+        val.m = updateStat(val.m, data.incLUK, e);
+      }
+      if (val.n !== null || data.incMHP !== null) {
+        val.n = updateStat(val.n, data.incMHP, e);
+      }
+      if (val.o !== null || data.incMMP !== null) {
+        val.o = updateStat(val.o, data.incMMP, e);
+      }
+      if (val.p !== null || data.incPAD !== null) {
+        val.p = updateStat(val.p, data.incPAD, e);
+      }
+      if (val.q !== null || data.incMAD !== null) {
+        val.q = updateStat(val.q, data.incMAD, e);
+      }
+      if (val.r !== null || data.incPDD !== null) {
+        val.r = updateStat(val.r, data.incPDD, e);
+      }
+      if (val.s !== null || data.incMDD !== null) {
+        val.s = updateStat(val.s, data.incMDD, e);
+      }
+      if (val.t !== null || data.incACC !== null) {
+        val.t = updateStat(val.t, data.incACC, e);
+      }
+      if (val.u !== null || data.incEVA !== null) {
+        val.u = updateStat(val.u, data.incEVA, e);
+      }
+      if (val.v !== null || data.incCraft !== null) {
+        val.v = updateStat(val.v, data.incCraft, e);
+      }
+      if (val.w !== null || data.incSpeed !== null) {
+        val.w = updateStat(val.w, data.incSpeed, e);
+      }
+      if (val.x !== null || data.incJump !== null) {
+        val.x = updateStat(val.x, data.incJump, e);
+      }
+      if (val.C !== null || data.bdR !== null) {
+        val.C = updateStat(val.C, data.bdR, e);
+      }
+      if (val.D !== null || data.imdR !== null) {
+        val.D = updateStat(val.D, data.imdR, e);
+      }
+    }
 }
 
 function getStatLine(prefix, stat, suffix) {
@@ -130,9 +135,9 @@ function getStatLine(prefix, stat, suffix) {
   if (stat != null) {
     if ($.isArray(stat)) {
       if (stat[0] > stat[1] || (stat[1] == null && stat[0] > 0)) { // Higher
-        result = rowStart + '<span class="text-primary">' + prefix + stat[2] + suffix + '</span>' + rowEnd;
+        result = rowStart + '<span class="blue-text">' + prefix + stat[2] + suffix + '</span>' + rowEnd;
       } else if (stat[1] > stat[0] || (stat[0] == null && stat[1] > 0)) { // Lower
-        result = rowStart + '<span class="text-danger">' + prefix + stat[2] + suffix + '</span>' + rowEnd;
+        result = rowStart + '<span class="red-text">' + prefix + stat[2] + suffix + '</span>' + rowEnd;
       } else {
         result = rowStart + prefix + stat[2] + suffix + rowEnd;
       }
@@ -195,7 +200,7 @@ function getItemDetails(iRow, val) {
   // If we have bonus potentials, show them too!
   if (val.L) {
     itemDetails += divider;
-    itemDetails += rowStart + '<span class="text-primary">Bonus Potential</span>' + rowEnd;
+    itemDetails += rowStart + '<span class="blue-text">Bonus Potential</span>' + rowEnd;
     itemDetails += rowStart + '+ ' + val.L + rowEnd;
     if (val.M) {
       itemDetails += rowStart + '+ ' + val.M + rowEnd;
@@ -207,7 +212,7 @@ function getItemDetails(iRow, val) {
   // If we have a neb, show it as well!
   if (val.V) {
     itemDetails += divider;
-    itemDetails += rowStart + '<span class="text-success">' + (val.V.length > 0 ? val.V : 'You can mount a Nebulite on this item.') + '</span>' + rowEnd;
+    itemDetails += rowStart + '<span class="green-text">' + (val.V.length > 0 ? val.V : 'You can mount a Nebulite on this item.') + '</span>' + rowEnd;
   }
   itemDetails += '<small class="text-muted">' + val.P + '</small>';
   itemDetails += '</div>'; // End of container
@@ -269,10 +274,9 @@ $(document).ready(function() {
           updateItemDetails(val, itemInfoMap[val.U]);
         } else { // Else, we need details
           $.getJSON("//maplestory.io/api/item/" + val.U, function(data) {
-            item = data.Equip;
-            itemInfoMap[data.id] = item;
+            itemInfoMap[data.id] = data;
             val['hasDetails'] = true; //iRowMap[iRow]['hasDetails'] = true;
-            updateItemDetails(val, item);
+            updateItemDetails(val, data);
             // We need to refresh the popover if it's still up
             $('#i' + iRow).replaceWith(getItemDetails(iRow, val));
           });
@@ -559,11 +563,11 @@ $(document).ready(function() {
             medianPercent = (val.X > 999 ? '>999' : val.X) + '%';
           }
           if (val.X >= 120) {
-            medianPercent = '<span class="text-danger">' + medianPercent + '</span>';
+            medianPercent = '<span class="red-text">' + medianPercent + '</span>';
           } else if (val.X >= 80) {
-            medianPercent = '<span class="text-info">' + medianPercent + '</span>';
+            medianPercent = '<span class="blue-text">' + medianPercent + '</span>';
           } else if (val.X >= 0) {
-            medianPercent = '<span class="text-success">' + medianPercent + '</span>';
+            medianPercent = '<span class="green-text">' + medianPercent + '</span>';
           }
           var name = '<div class="item-popover" data-toggle="popover" ' + 'data-title="' + itemTitle + '" data-class="' + rareClass + '" data-row="' + iRow + '"><ul class="list-inline no-bottom">' + '<li data-row="' + iRow + '"><img class="lazy" data-original="http://maplestory.io/api/item/' + val.T + '/icon" alt="' + escapeHtml(val.O) + '" style="margin-right:5px;"><span style="vertical-align:super;">' + itemName + '</span> <a class="chip blue lighten-1 white-text right" href="/statistics/item/' + val.U + '"><i class="fa fa-chevron-right"></i></li></ul></div>';
           var shopName = val.f;
