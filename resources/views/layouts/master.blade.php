@@ -55,7 +55,7 @@
 <main>
   <div class="container content">
     @if(!Auth::check())
-      <div class="alert-dev blue white-text center" style="font-size:20px;"><b>Hello mapler!</b> Thank you for testing out our public alpha as we craft a better experience for you. Please report any bugs on our <a href="http://github.com/crrio/maple.fm/issues" class="white-text"><u>Github</u></a>! <i class="fa fa-heart"></i>
+      <div class="alert-dev blue white-text center" style="font-size:20px;"><b>Hello mapler!</b> Thank you for testing out our public alpha as we craft a better experience for you. Please report any bugs on our <a href="//github.com/crrio/maple.fm/issues" class="white-text"><u>Github</u></a>! <i class="fa fa-heart"></i>
       </div>
     @endif
       <div class="row">

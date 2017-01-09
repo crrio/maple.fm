@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $ = window.jQuery = window.$ = require('jquery');
 window.jQuery = $;
 require('materialize-css');
 
