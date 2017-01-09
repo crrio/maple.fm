@@ -564,7 +564,7 @@
             });
 
             // Insert into the data table
-            $.getJSON({!! "\"http://maplestory.io/api/world/$serverId/market/legacy\"" !!}, function(data) {
+            $.getJSON({!! "\"http://maplestory.io/api/server/$serverId/market/legacy\"" !!}, function(data) {
                 var items = [];
                 var odd = new Boolean(true);
                 $.each(data, function(key, val) {
