@@ -90,10 +90,12 @@
         </footer>
 
       <div id="markets" class="modal bottom-sheet">
-        <div class="modal-content">
-          <h4>Markets</h4>
-          <p>View the entire Free Market of each MapleStory server below. Support for Luna will be added soon.</p>
     <div class="row">
+    <div class="modal-content">
+      <div class="col s12 m12">
+        <h4>Markets</h4>
+        <p>View the entire Free Market of each MapleStory server below. Support for Luna will be added soon.</p>
+      </div>
         <div class="col s12 m4">
             <div class="card horizontal">
               <div class="card-stacked">
@@ -173,52 +175,16 @@
             </div>
         </div>
     </div>
+    </div>
         </div>
       </div>
 
       <script src="/js/app.js"></script>
+      <script src="/js/crrio.core.js"></script>
       <script src="/js/codepeg.pixelPerfect.js"></script>
-      <script type="text/javascript">
-        var Market = {
-                servers: {
-                    scania: 0,
-                    windia: 0,
-                    bera: 0,
-                    khroa: 0,
-                    mybckn: 0,
-                    grazed: 0
-                },
-                count: 0
-            };
-
-            function getCount() {
-                if (Market.count != 0) {
-                    return Market.count;
-                } else {
-                    $.each(Market.servers, function (server_name, server_item_count) {
-                        $.ajax({
-                            url: 'http://maplestory.io/api/server/' + Object.keys(Market.servers).indexOf(server_name).toString() + '/market/itemCount',
-                            async: false,
-                            success: function (data) {
-                                var json_data = JSON.parse(data);
-                                var priorCount = Market.count;
-                                $('#'+ server_name +'').html(json_data).formatNumber();
-                                Market.count += json_data;
-                                Market.servers[server_name] = json_data;
-                                //console.log(data + ' items were added to ' + priorCount + ' to become ' + Market.count + ' items.');
-                            }
-                        });
-                    });
-                    return Market.count;
-                }
-            }
-
-          $('#total').html(getCount()).formatNumber();
-
-      </script>
       <script>
-
       $( document ).ready(function(){
+        getCount();
         $(".button-collapse").sideNav();
         $('.modal').modal();
       });
