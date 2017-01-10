@@ -210,10 +210,10 @@ function getItemDetails(iRow, val) {
     }
   }
   // If we have a neb, show it as well!
-  if (val.V) {
-    itemDetails += divider;
-    itemDetails += rowStart + '<span class="green-text">' + (val.V.length > 0 ? val.V : 'You can mount a Nebulite on this item.') + '</span>' + rowEnd;
-  }
+  //if (val.V) {
+  //  itemDetails += divider;
+  //  itemDetails += rowStart + '<span class="green-text">' + (val.V.length > 0 ? val.V : 'You can mount a Nebulite on this item.') + '</span>' + rowEnd;
+  //}
   itemDetails += '<small class="text-muted">' + val.P + '</small>';
   itemDetails += '</div>'; // End of container
   return itemDetails;
