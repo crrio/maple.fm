@@ -1,189 +1,65 @@
 @extends('layouts.master')
 
 @section('title')
-Explore
+MapleStory Free Market
+@endsection
+
+@section('nav-title')
+Explore <a href="//github.com/crrio/maple.fm/tree/development" target="_blank"><span class="chip white-text" style="background:rgba(0,0,0,0.2);vertical-align:middle;">{{ exec('git rev-parse --short HEAD') }}</span></a>
 @endsection
 
 @section('full')
-    <h1 class="center">Explore the Free Market</h1>
-    <p class="flow-text center">Take a glimpse of the entire Free Market of MapleStory,<br/>along with powerful statistics about it's economy and items.</p>
-    <form method="post" action="/register">
-    <input type="text" name="i" id="item_search" placeholder="Begin searching.." class="validate welcome-search" style="font-size:40px;" value="">
+    @if(!Auth::check())
+      <div class="alert-dev white-text center" style="font-size:20px;"><b>Hello mapler!</b> Thank you for testing out our public alpha as we craft a better experience for you. Please report any bugs on our <a href="//github.com/crrio/maple.fm/issues" target="_blank" class="white-text"><u>Github</u></a>! <i class="fa fa-heart"></i>
+      </div>
+    @endif
+    <h1 class="center white-text">Explore the Free Market</h1>
+    <p class="flow-text center white-text">Take a glimpse of the entire Free Market of MapleStory,<br/>along with powerful statistics about it's economy and items.</p>
+    <form method="post">
+    <input type="text" name="i" id="item_search" placeholder="Begin searching.." class="validate welcome-search" style="font-size:40px;padding: 8px;border-bottom:1px solid #FFF;color:#FFF;" value="">
     <input type="hidden" name="item" id="item_hidden" value="">
     </form>
 @endsection
 
 @section('content')
-<h4>Statistics</h4>
-<p>Throughout all markets, there are a total of <b><span id="total"></span> items</b> listed currently.</p>
+<h4 class="white-text">More about our service..</h4>
+<p class="white-text">Under construction.</p>
 @endsection
 
 @section('sidebar')
-<h4>Donations</h4>
-<p>Our service is provided for free to everyone in the spirit of free-to-play gaming. As such, we depend on donations to keep up with server costs.</p>
-<p>We appreciate every single individual that has helped support our services through <a href="http://patreon.com/Crrio" target="_blank">Patreon</a>.</p>
+<h4 class="white-text">Donations</h4>
+<p class="white-text">Our service is provided for free to everyone in the spirit of free-to-play gaming. As such, we depend on donations to keep up with server costs.</p>
+<p class="white-text">We appreciate every single individual that has helped support our services through <a href="http://patreon.com/Crrio" target="_blank">Patreon</a>.</p>
 @endsection
 
 @section('css')
 <style>
+  html, body {
+      background: #c0c0aa; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #c0c0aa , #1ce) !important; /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #c0c0aa , #1ce) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      height: 100vh;
+      margin: 0;
+  }
+  ::-webkit-input-placeholder {
+    color: #FFFFFF !important;
+  }
 
-.twitter-typeahead {
-    width: 100%;
-}
+  :-moz-placeholder { /* Firefox 18- */
+    color: #FFFFFF !important;
+  }
 
-.typeahead,
-.tt-query,
-.tt-hint, {
-  height: 30px;
-  padding: 8px 12px;
-  font-size: 24px;
-  line-height: 30px;
-  border: 2px solid #ccc;
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
-  outline: none;
-}
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #FFFFFF !important;
+  }
 
-.typeahead {
-  background-color: #fff;
-}
-
-.typeahead:focus {
-  border: 2px solid #0097cf;
-}
-
-.tt-query {
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-
-.tt-hint {
-  color: #999
-}
-
-.tt-menu {
-  width: 100%;
-  margin: 12px 0;
-  padding: 8px 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
-  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-          box-shadow: 0 5px 10px rgba(0,0,0,.2);
-}
-
-.tt-suggestion {
-  padding: 3px 20px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.tt-suggestion:hover {
-  cursor: pointer;
-  color: #fff;
-  background-color: #0097cf;
-}
-
-.tt-suggestion.tt-cursor {
-  color: #fff;
-  background-color: #0097cf;
-
-}
-
-.tt-suggestion p {
-  margin: 0;
-}
-
-.gist {
-  font-size: 14px;
-}
-
-/* example specific styles */
-/* ----------------------- */
-
-#custom-templates .empty-message {
-  padding: 5px 10px;
- text-align: center;
-}
-
-#multiple-datasets .league-name {
-  margin: 0 20px 5px 20px;
-  padding: 3px 0;
-  border-bottom: 1px solid #ccc;
-}
-
-#scrollable-dropdown-menu .tt-menu {
-  max-height: 150px;
-  overflow-y: auto;
-}
-
-#rtl-support .tt-menu {
-  text-align: right;
-}
+  :-ms-input-placeholder {  
+    color: #FFFFFF !important;
+  }
 </style>
 @endsection
 
 @section('js')
 <script src="/js/typeahead.min.js"></script>
-<script type="text/javascript">
-// Instantiate the Bloodhound suggestion engine
-var items = new Bloodhound({
-    datumTokenizer: function (datum) {
-        return Bloodhound.tokenizers.whitespace(datum.value);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    prefetch: {
-        url: 'http://maplestory.io/api/item/list',
-        filter: function (items) {
-            // Map the remote source JSON array to a JavaScript object array
-            return $.map(items, function (item) {
-                return {
-                    value: item.name,
-                    id: item.id,
-                };
-            });
-        }
-    },
-    minLength: 3,
-});
-
-// Initialize the Bloodhound suggestion engine
-items.initialize();
-
-// Instantiate the Typeahead UI
-$('#item_search').typeahead(null, {
-    displayKey: 'value',
-    minLength: 3,
-    limit: 10,
-    source: items.ttAdapter(),
-    templates: {
-        suggestion: function(data) {
-            return '<div><img src="http://maplestory.io/api/item/' + data.id + '/icon" style="margin-right:10px;"/><span style="vertical-align: super;">' + data.value + '</span></div>';
-        }
-    }
-});
-
-$('#item_search').on('typeahead:selected', function (e, datum) {
-    $("#item_hidden").val(datum.id);
-});
-$('#item_search').on('typeahead:cursorchanged', function (e, datum) {
-    $("#item_hidden").val(datum.id);
-});
-
-$('#item_search').on('keypress', function (e) {
-     if(e.which === 13){
-
-        //Disable textbox to prevent multiple submit
-        $(this).attr("disabled", "disabled");
-
-        window.location.href = '/statistics/item/' + $('#item_hidden').val() + '';
-     }
-});
-</script>
+<script src="/js/crrio.itemFunc.js"></script>
 @endsection
