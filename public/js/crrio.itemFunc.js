@@ -30,7 +30,7 @@ $('#item_search').typeahead(null, {
     source: items.ttAdapter(),
     templates: {
         suggestion: function(data) {
-            return '<div><img src="http://maplestory.io/api/item/' + data.id + '/icon" style="margin-right:10px;"/><span style="vertical-align: super;">' + data.value + '</span></div>';
+        return '<div class="row" style="margin:0px;"><div class="col m1 s3" style="max-height:40px;"><img src="//maplestory.io/api/item/'+data.id+'/iconRaw"></div><div class="col m11 s9" style="max-height:40px;">' + data.value + '</div></div>';
         }
     }
 });
