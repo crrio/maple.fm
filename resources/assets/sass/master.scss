@@ -29,19 +29,19 @@ h1, h2, h3, h4 {
 }
 
 ::-webkit-input-placeholder {
-   color: #666 !important;
+  color: #4e89a4 !important;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #666; 
+  color: #4e89a4 !important;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #666;  
+  color: #4e89a4 !important;
 }
 
 :-ms-input-placeholder {  
-   color: #666;  
+  color: #4e89a4 !important;
 }
 
 section {
@@ -136,7 +136,7 @@ li {
 
 .alert-dev {
     margin-top: 25px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
     padding: 10px 20px !important;
     border-radius: 5px;
     border-bottom: 4px solid rgba(0,0,0,0.1);
@@ -481,6 +481,12 @@ th {
     margin-top: 1em !important;
 }
 
+.for-search {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
 .welcome-search, .tt-input {
     font-weight: 200;
 }
@@ -521,26 +527,23 @@ th {
 }
 
 .tt-hint {
-  color: #999
+  color: #999;
 }
 
 .tt-menu {
   width: 100%;
   margin: 12px 0;
-  padding: 8px 0;
-  background-color: #fff;
+  padding: 0px;
+  background: #FFF;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
      -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
           box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 .tt-suggestion {
-  padding: 3px 20px;
+  padding: 8px 20px;
   font-size: 18px;
   line-height: 24px;
 }
