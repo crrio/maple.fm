@@ -217,9 +217,8 @@ var CodePeg = CodePeg || {};
                 } else {
                     // w and h are determined by canvas width / height
                 }
-
-                img.src = url;
                 img.crossOrigin = "Anonymous";
+                img.src = url;
                 img.onload = function() {
                     if (typeof options.filter == 'function') {
                         options.filter(canvas, this, scaleX, scaleY);
