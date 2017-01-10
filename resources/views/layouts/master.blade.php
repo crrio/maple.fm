@@ -99,7 +99,7 @@
               <div class="card-stacked">
                 <a href="/scania">
                 <div class="card-content blue white-text" style="position:relative;overflow:hidden;">
-                    <canvas data-url="/img/worlds/Scania.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-30px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
+                    <canvas class="worldicon" data-url="/img/worlds/Scania.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-30px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
                     <p class="flow-text">Scania</p>
                     <p><b><span id="scania"></span></b> Items Listed</p>
                 </div>
@@ -112,7 +112,7 @@
               <div class="card-stacked">
                 <a href="/windia">
                 <div class="card-content purple white-text" style="position:relative;overflow:hidden;">
-                    <canvas data-url="/img/worlds/Windia.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-30px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
+                    <canvas class="worldicon" data-url="/img/worlds/Windia.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-30px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
                     <p class="flow-text">Windia</p>
                     <p><b><span id="windia"></span></b> Items Listed</p>
                 </div>
@@ -125,7 +125,7 @@
               <div class="card-stacked">
                 <a href="/bera">
                 <div class="card-content red lighten-1 white-text" style="position:relative;overflow:hidden;">
-                    <canvas data-url="/img/worlds/Bera.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-30px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
+                    <canvas class="worldicon" data-url="/img/worlds/Bera.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-30px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
                     <p class="flow-text">Bera</p>
                     <p><b><span id="bera"></span></b> Items Listed</p>
                 </div>
@@ -138,7 +138,7 @@
               <div class="card-stacked">
                 <a href="/khroa">
                 <div class="card-content green lighten-1 white-text" style="position:relative;overflow:hidden;">
-                    <canvas data-url="/img/worlds/Broa.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-20px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
+                    <canvas class="worldicon" data-url="/img/worlds/Broa.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-20px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
                     <p class="flow-text">Khroa</p>
                     <p><b><span id="khroa"></span></b> Items Listed</p>
                 </div>
@@ -151,7 +151,7 @@
               <div class="card-stacked">
                 <a href="/mybckn">
                 <div class="card-content orange white-text" style="position:relative;overflow:hidden;">
-                    <canvas data-url="/img/worlds/Mardia.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-20px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
+                    <canvas class="worldicon" data-url="/img/worlds/Mardia.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-20px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
                     <p class="flow-text">MyBckn</p>
                     <p><b><span id="mybckn"></span></b> Items Listed</p>
                 </div>
@@ -164,7 +164,7 @@
               <div class="card-stacked">
                 <a href="/grazed">
                 <div class="card-content grey darken-4 white-text" style="position:relative;overflow:hidden;">
-                    <canvas data-url="/img/worlds/Demethos.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-20px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
+                    <canvas class="worldicon" data-url="/img/worlds/Demethos.png" data-scale="10" style="margin-right:5px;position:absolute;right:-20px;top:-20px;opacity:0.5;" data-toggle="tooltip" data-placement="bottom" title="Market" width="80" height="80"></canvas>
                     <p class="flow-text">Grazed</p>
                     <p><b><span id="grazed"></span></b> Items Listed</p>
                 </div>
@@ -224,7 +224,7 @@
       });
 
       var pixelPerfect = new CodePeg.PixelPerfect(
-          $('canvas'), {
+          $('.worldicon'), {
               urlTag: 'url', // The name of the data tag for the url
               scaleTag: 'scale', // The data tag for the image's scale factor
               filter: 'nearestneighbor', // The image scaling filter to apply. string or function
