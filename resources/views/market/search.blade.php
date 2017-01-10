@@ -4,6 +4,10 @@
 {{ $server }} Market
 @endsection
 
+@section('nav-title')
+{{ $server }} Market
+@endsection
+
 @section('full')
     <input type="hidden" id="serverid" value="{{ $serverId }}">
     <div class="table-responsive" style="padding:5px;">

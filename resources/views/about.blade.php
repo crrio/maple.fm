@@ -4,6 +4,10 @@
 About
 @endsection
 
+@section('nav-title')
+About
+@endsection
+
 @section('content')
 <p class="flow-text">Built with the MapleStory community in mind, we offer each player the chance to succeed that they deserve. Our service provides innovative and useful tools for maplers to enjoy what it truely means to be a mapler!</p>
 <p class="flow-text">Founded in 2013, our service has been the cornerstone of the MapleStory economy for statistics, histoical pricing, and much more. We've helped impact over <b>1.5 million maplers</b>' experience playing MapleStory, and continue to do so for free in the spirit of free-to-play gaming.</p>

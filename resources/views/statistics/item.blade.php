@@ -4,6 +4,10 @@
 Statistics
 @endsection
 
+@section('nav-title')
+Item Information
+@endsection
+
 @section('full')
 <div class="preloader-wrapper big active center" style="margin:20px auto; display: block;">
   <div class="spinner-layer spinner-blue">
@@ -48,6 +52,8 @@ Statistics
 <span id="imdR"></span>
 <span id="tuc"></span>
 <span id="data"></span>
+<br/>
+<span class="chip"><b>Tip:</b> Click the item title above to search for another.</span>
 @endsection
 
 @section('sidebar')
@@ -139,7 +145,6 @@ Statistics
     // Item ID
     $('.item-title').removeClass('hide');
     $('#item_search').attr('placeholder', data.name);
-    $('#item_search').attr('value', data.name);
     $('.icon').attr('data-url', 'data:image/png;base64,'+data.Icon.IconRaw);
 
       var pixelPerfect = new CodePeg.PixelPerfect(
