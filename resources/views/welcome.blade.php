@@ -8,7 +8,7 @@ Explore
     <h1 class="center">Explore the Free Market</h1>
     <p class="flow-text center">Take a glimpse of the entire Free Market of MapleStory,<br/>along with powerful statistics about it's economy and items.</p>
     <form method="post">
-    <input type="text" name="i" id="item_search" placeholder="Begin searching.." class="validate welcome-search" style="font-size:40px;" value="">
+    <input type="text" name="i" id="item_search" placeholder="Begin searching.." class="validate welcome-search" style="font-size:40px;padding: 8px;" value="">
     <input type="hidden" name="item" id="item_hidden" value="">
     </form>
 @endsection
