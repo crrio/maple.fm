@@ -477,8 +477,13 @@ th {
     color: black; /* Nexon'd tag, but still need to add it so it's replaced. Used in some custom dialogs */
 }
 
-.item-search {
+.item-search, .pages {
     margin-top: 1em !important;
+    background-color: rgba(255,255,255,.9) !important;
+    border: 1px solid #f2f2f2 !important;
+    border-radius: 2px !important;
+    height: 3rem !important;
+    font-size: 1rem;
 }
 
 .for-search {

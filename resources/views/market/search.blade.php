@@ -63,9 +63,6 @@
     <script type="text/javascript" language="javascript" src="/js/codepeg.statFilter.js?r=2"></script>
     <script type="text/javascript" language="javascript" src="/js/crrio.marketFunc.js"></script>
     <script>
-      $(document).ready(function() {
-        $('select').material_select();
-      });
       $('#refresh').click(function() {
         window.location.reload();
       });

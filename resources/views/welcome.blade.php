@@ -5,7 +5,7 @@ MapleStory Free Market
 @endsection
 
 @section('nav-title')
-Explore <a href="//github.com/crrio/maple.fm/tree/development" target="_blank"><span class="chip white-text" style="background:rgba(0,0,0,0.2);vertical-align:middle;">{{ exec('git rev-parse --short HEAD') }}</span></a>
+Explore
 @endsection
 
 @section('full')
