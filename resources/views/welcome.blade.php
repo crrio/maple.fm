@@ -29,7 +29,7 @@ Explore
 @section('sidebar')
 <h4 class="white-text">Donations</h4>
 <p class="white-text">Our service is provided for free to everyone in the spirit of free-to-play gaming. As such, we depend on donations to keep up with server costs.</p>
-<p class="white-text">We appreciate every single individual that has helped support our services through <a href="http://patreon.com/Crrio" target="_blank">Patreon</a>.</p>
+<p class="white-text">We appreciate every single individual that has helped support our services through <a href="http://patreon.com/Crrio" target="_blank" class="white-text"><b>Patreon</b></a>.</p>
 @endsection
 
 @section('css')
