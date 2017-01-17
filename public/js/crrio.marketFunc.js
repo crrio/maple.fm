@@ -332,7 +332,8 @@ $(document).ready(function() {
         "bSearchable": false
       }, // Qty
       {
-        "bSearchable": false
+        "bSearchable": false,
+        "bVisible": false
       }, // Bundle
       {
         "sType": "numeric-formatted",
