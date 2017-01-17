@@ -9,6 +9,18 @@
 @endsection
 
 @section('full')
+<div style="margin-top:20px;">
+  <div class="left">
+    <input type="checkbox" id="checkbox-cash" />
+    <label for="checkbox-cash">Only Show Cash Items</label>
+  </div>
+
+  <div class="right">
+    <input type="checkbox" id="checkbox-sold" checked="checked"/>
+    <label for="checkbox-sold">Hide Sold Items</label>
+  </div>
+</div>
+
     <input type="hidden" id="serverid" value="{{ $serverId }}">
     <div class="table-responsive" style="padding:5px;">
       <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover" id="search_results_table" width="100%">
@@ -29,33 +41,10 @@
         </tbody>
       </table>
     </div>
-    <div class="hide">
-            <label class="pull-left">
-                <input type="checkbox" id="checkbox-cash"> Only Show Cash Items
-            </label>
-            <label class="pull-right">
-                <input type="checkbox" id="checkbox-sold"> Hide sold items
-            </label>
-    </div>
-                <select class="form-control input-sm" id="select-category">
-                    <option value="">All Categories</option>
-                    <option value="Equip">Equip</option>
-                    <option value="Use">Use</option>
-                    <option value="Etc">Etc</option>
-                    <option value="Setup">Setup</option>
-                </select>
-                <select class="form-control input-sm hide" id="select-subcategory"></select>
-                <select class="form-control input-sm hide" id="select-detailcategory"></select>
-            </div>
 @endsection
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/DT_bootstrap.css">
-    <style>
-    .dataTables_wrapper {
-        clear: none !important;
-    }
-    </style>
 @endsection
 
 @section('js')
