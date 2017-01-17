@@ -408,6 +408,11 @@ $(document).ready(function() {
       oTable.fnFilter('', 12);
     }
   });
+
+  // We're going to hide sold items by default
+  // However, allow it to be unchecked if needed.
+  oTable.fnFilter("^[1-9][0-9]*$", 1, true);
+
   $("#checkbox-sold").change(function() {
     if (this.checked) {
       oTable.fnFilter("^[1-9][0-9]*$", 1, true);
