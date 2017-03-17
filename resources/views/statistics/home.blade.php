@@ -9,7 +9,7 @@ Statistics
 @endsection
 
 @section('full')
-<div class="alert-dev red white-text center" style="font-size:20px;"><i class="fa fa-exclamation-circle"></i> <b>Heads up!</b> All the statistics on this page are randomly generated and will be replaced with actual statistics soon.
+<div class="alert-dev red white-text center"><i class="fa fa-exclamation-circle"></i> <b>Heads up!</b> All the statistics on this page are randomly generated and will be replaced with actual statistics soon.
 </div>
 @endsection
 

@@ -136,7 +136,7 @@ li {
 
 .alert-dev {
     margin-top: 25px;
-    background: rgba(0,0,0,0.4);
+    background: #488AC7;
     padding: 10px 20px !important;
     border-radius: 5px;
     border-bottom: 4px solid rgba(0,0,0,0.1);
@@ -605,4 +605,8 @@ th {
 .bottom-ad {
   margin-top: 10px;
   text-align: center;
+}
+
+.m-dialog {
+  background: rgba(0,0,0,0.6);
 }

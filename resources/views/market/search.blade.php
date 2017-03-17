@@ -60,11 +60,6 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/DT_bootstrap.css">
-    <style>
-      .m-dialog {
-        background: rgba(0,0,0,0.6);
-      }
-    </style>
 @endsection
 
 @section('js')
