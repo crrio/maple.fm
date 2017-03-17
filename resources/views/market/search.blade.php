@@ -9,6 +9,15 @@
 @endsection
 
 @section('full')
+<div class="top-ad">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6550692695111418"
+     data-ad-slot="4323719721"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 <div style="margin-top:20px;">
   <div class="left">
     <input type="checkbox" id="checkbox-cash" />
@@ -41,13 +50,28 @@
         </tbody>
       </table>
     </div>
+<div class="bottom-ad">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6550692695111418"
+     data-ad-slot="7277186127"></ins>
+</div>
 @endsection
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/DT_bootstrap.css">
+    <style>
+      .m-dialog {
+        background: rgba(0,0,0,0.6);
+      }
+    </style>
 @endsection
 
 @section('js')
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script type="text/javascript" language="javascript" src="/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="/js/codepeg.statFilter.js?r=2"></script>
     <script type="text/javascript" language="javascript" src="/js/crrio.marketFunc.js"></script>
