@@ -9,10 +9,6 @@ Explore
 @endsection
 
 @section('full')
-    @if(!Auth::check())
-      <div class="alert-dev white-text center" style="font-size:20px;"><b>Hello mapler!</b> Thank you for testing out our public alpha as we craft a better experience for you. Please report any bugs on our <a href="//github.com/crrio/maple.fm/issues" target="_blank" class="white-text"><u>Github</u></a>! <i class="fa fa-heart"></i>
-      </div>
-    @endif
     <h1 class="center white-text">Explore the Free Market</h1>
     <p class="flow-text center white-text">Take a glimpse of the entire Free Market of MapleStory,<br/>along with powerful statistics about it's economy and items.</p>
     <form method="post">
@@ -22,8 +18,8 @@ Explore
 @endsection
 
 @section('content')
-<h4 class="white-text">More about our service..</h4>
-<p class="white-text">Under construction.</p>
+<h4 class="white-text">Latest News</h4>
+<p class="white-text" id="news"></p>
 @endsection
 
 @section('sidebar')
@@ -60,6 +56,25 @@ Explore
 @endsection
 
 @section('js')
+<script src="/js/jquery.rss.js"></script>
+<script>
+$("#news").rss(
+  "http://blog.crr.io/rss/",
+  {
+    limit: 1,
+    offsetStart: false,
+    offsetEnd: false,
+    ssl: false,
+    host: 'feedrapp.info',
+    layoutTemplate: "<div class='feed-container'>{entries}</div>",
+    entryTemplate: '<h4 style="padding:5px 10px;background:#F1F1F1;"><a href="{url}">{title}</a></h4><p>{body}</p>',
+    dateFormat: 'MMMM Do, YYYY',
+    dateLocale: 'en',
+    // valid values: 'show', 'slide', 'slideFast', 'slideSynced', 'slideFastSynced'
+    effect: 'slideFastSynced',
+  },
+)
+</script>
 <script src="/js/typeahead.min.js"></script>
 <script src="/js/crrio.itemFunc.js"></script>
 @endsection
