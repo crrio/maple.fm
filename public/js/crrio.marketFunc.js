@@ -626,7 +626,7 @@ $(document).ready(function() {
         readableTime = readableTime.replace("T", " ");
         readableTime = readableTime.substring(0, readableTime.indexOf("."));
         // Create notice based on time
-        $(".attach-header").after('<span style="font-size:16px;color:#AAA;">Updated <b><span id="minute">' + minuteOffset + '</span> minute' + (minuteOffset == 1 ? '' : 's') + '</b> ago' + extraText + '</span>');
+        Materialize.toast('Updated&nbsp;<b><span id="minute">' + minuteOffset + '</span> minute' + (minuteOffset == 1 ? '' : 's') + '</b>&nbsp;ago', 9999999999, 'm-dialog');
       }
     });
     // Load oTable in chunks
