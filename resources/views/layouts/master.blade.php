@@ -3,6 +3,11 @@
   <div class="container content">
       <div class="row">
           <div class="col s12">
+          @if(env('NOTICE') != '')
+            <div class="alert-dev white-text">
+            {!! env('NOTICE') !!}
+            </div>
+          @endif
           @if(!empty($message))
             {{ \Core\Corsair::displayMessage($message) }}
           @endif
