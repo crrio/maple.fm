@@ -136,7 +136,7 @@ li {
 
 .alert-dev {
     margin-top: 25px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.4);
     padding: 10px 20px !important;
     border-radius: 5px;
     border-bottom: 4px solid rgba(0,0,0,0.1);
@@ -595,4 +595,14 @@ th {
 
 #rtl-support .tt-menu {
   text-align: right;
+}
+
+.top-ad {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.bottom-ad {
+  margin-top: 10px;
+  text-align: center;
 }
