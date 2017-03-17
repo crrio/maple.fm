@@ -72,8 +72,7 @@ $("#news").rss(
     dateLocale: 'en',
     // valid values: 'show', 'slide', 'slideFast', 'slideSynced', 'slideFastSynced'
     effect: 'slideFastSynced',
-  },
-)
+  });
 </script>
 <script src="/js/typeahead.min.js"></script>
 <script src="/js/crrio.itemFunc.js"></script>
