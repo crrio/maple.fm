@@ -210,10 +210,10 @@ function getItemDetails(iRow, val) {
     }
   }
   // If we have a neb, show it as well!
-  if (val.V) {
-    itemDetails += divider;
-    itemDetails += rowStart + '<span class="green-text">' + (val.V.length > 0 ? val.V : 'You can mount a Nebulite on this item.') + '</span>' + rowEnd;
-  }
+  //if (val.V) {
+  //  itemDetails += divider;
+  //  itemDetails += rowStart + '<span class="green-text">' + (val.V.length > 0 ? val.V : 'You can mount a Nebulite on this item.') + '</span>' + rowEnd;
+  //}
   itemDetails += '<small class="text-muted">' + val.P + '</small>';
   itemDetails += '</div>'; // End of container
   return itemDetails;
@@ -316,10 +316,11 @@ $(document).ready(function() {
     "fnDrawCallback": function(oSettings) {
       // Lazy load the images on page change
       $("img.lazy").lazyload();
+      $('select').material_select();
     },
     "oLanguage": {
       "sEmptyTable": '<div class="preloader-wrapper big active" style="margin:20px;"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div>',
-      "sLengthMenu": '<ul class="list-inline no-bottom unstyled col m3 s12 input-field right"><select class="validate">' + '<option value="5">5</option>' + '<option value="10">10</option>' + '<option value="20" selected="selected">20</option>' + '<option value="25">25</option>' + '<option value="50">50</option>' + '<option value="100">100</option>' + '<option value="250">250</option>' + '</select></li></ul>',
+      "sLengthMenu": '<select class="pages col m3 s12 right browser-default">' + '<option value="5">5 Items</option>' + '<option value="10">10 Items</option>' + '<option value="20" selected>20 Items</option>' + '<option value="25">25 Items</option>' + '<option value="50">50 Items</option>' + '<option value="100">100 Items</option>' + '<option value="250">250 Items</option>' + '</select>',
       "sSearch": ''
     },
     'iDisplayLength': 20,
@@ -331,7 +332,8 @@ $(document).ready(function() {
         "bSearchable": false
       }, // Qty
       {
-        "bSearchable": false
+        "bSearchable": false,
+        "bVisible": false
       }, // Bundle
       {
         "sType": "numeric-formatted",
@@ -389,7 +391,7 @@ $(document).ready(function() {
   // Change search input class
   $search = $('div.dataTables_filter input');
   $label = $('div.dataTables_filter label');
-  $search.addClass('validate col m9 s12 input-field item-search');
+  $search.addClass('col m9 s12 item-search');
   $search.attr('placeholder', 'Search for item or player name..');
   $search.insertBefore($label);
   $label.remove();
@@ -407,6 +409,11 @@ $(document).ready(function() {
       oTable.fnFilter('', 12);
     }
   });
+
+  // We're going to hide sold items by default
+  // However, allow it to be unchecked if needed.
+  oTable.fnFilter("^[1-9][0-9]*$", 1, true);
+
   $("#checkbox-sold").change(function() {
     if (this.checked) {
       oTable.fnFilter("^[1-9][0-9]*$", 1, true);
@@ -619,7 +626,7 @@ $(document).ready(function() {
         readableTime = readableTime.replace("T", " ");
         readableTime = readableTime.substring(0, readableTime.indexOf("."));
         // Create notice based on time
-        $(".attach-header").after('<span style="font-size:16px;color:#AAA;">Updated <b><span id="minute">' + minuteOffset + '</span> minute' + (minuteOffset == 1 ? '' : 's') + '</b> ago' + extraText + '</span>');
+        Materialize.toast('Updated&nbsp;<b><span id="minute">' + minuteOffset + '</span> minute' + (minuteOffset == 1 ? '' : 's') + '</b>&nbsp;ago', 9999999999, 'm-dialog');
       }
     });
     // Load oTable in chunks
@@ -654,7 +661,6 @@ $(document).ready(function() {
         chunkLoadData(items, offset + 100);
       }, 1);
     }
-    $('select').material_select();
     chunkLoadData(items, 0);
     // Enable arrow keys
     $(document).keydown(function(event) {

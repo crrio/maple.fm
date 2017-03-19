@@ -1,5 +1,5 @@
 html {
-    background: #F1F1F1;
+    background: #FDFDFD;
 }
 
 body {
@@ -136,7 +136,7 @@ li {
 
 .alert-dev {
     margin-top: 25px;
-    background: rgba(0,0,0,0.2);
+    background: #488AC7;
     padding: 10px 20px !important;
     border-radius: 5px;
     border-bottom: 4px solid rgba(0,0,0,0.1);
@@ -149,6 +149,7 @@ li {
 
 td, th {
     padding: 0px 10px 0px 10px !important;
+    border-radius: 0px !important;
 }
 
 
@@ -477,8 +478,13 @@ th {
     color: black; /* Nexon'd tag, but still need to add it so it's replaced. Used in some custom dialogs */
 }
 
-.item-search {
+.item-search, .pages {
     margin-top: 1em !important;
+    background-color: rgba(255,255,255,.9) !important;
+    border: 1px solid #f2f2f2 !important;
+    border-radius: 2px !important;
+    height: 3rem !important;
+    font-size: 1rem;
 }
 
 .for-search {
@@ -589,4 +595,18 @@ th {
 
 #rtl-support .tt-menu {
   text-align: right;
+}
+
+.top-ad {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.bottom-ad {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.m-dialog {
+  background: rgba(0,0,0,0.6);
 }
