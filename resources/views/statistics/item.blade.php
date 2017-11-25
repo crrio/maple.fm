@@ -52,8 +52,7 @@ Item Information
 <span id="imdR"></span>
 <span id="tuc"></span>
 <span id="data"></span>
-<br/>
-<span class="chip"><b>Tip:</b> Click the item title above to search for another.</span>
+<a href="//maplestory.wiki/gms/latest/item/{{ $itemId }}" class="chip" style="margin-top:10px;" target="_blank"><i class="fa fa-external-link"></i> Click here to view this item on <b>MapleStory: Wiki</b></a>
 @endsection
 
 @section('sidebar')
