@@ -451,8 +451,8 @@ $(document).ready(function() {
       }
     }
     // If not any, then display subcategory
-    $subCategory.toggleClass('hide', category == '');
-    $("#select-detailcategory").addClass('hide');
+    toggleCategoryVisibility($subCategory, category != '');
+    toggleCategoryVisibility($("#select-detailcategory"), false);
   });
   $("#select-subcategory").change(function() {
     var category = $("#select-category").children(":selected").val();
@@ -483,7 +483,7 @@ $(document).ready(function() {
       }
     }
     // If not any, then display detailcategory
-    $detailCategory.toggleClass('hide', subCategory == '');
+    toggleCategoryVisibility($detailCategory, subCategory != '');
   });
   $("#select-detailcategory").change(function() {
     $option = $(this).children(":selected");
@@ -646,7 +646,7 @@ $(document).ready(function() {
         // Re-sort
         //oTable.fnReloadAjax();
         // Show advanced options
-        $("#select-category").removeClass('hide');
+        toggleCategoryVisibility($("#select-category"), true);
         oTable.fnDraw(true);
         return;
       }
@@ -689,6 +689,18 @@ $(document).ready(function() {
     oTable.fnDraw(); // redraw
   });
 });
+
+/**
+ * Toggles visibility of the provided category.
+ * @param {jQuery}  category the category to set visibility for
+ * @param {boolean} visibility if true, the category will be visible
+ */
+function toggleCategoryVisibility($category, visibility) {
+  $category.toggleClass('hide', !visibility);
+  $category.parent().toggleClass('hide', !visibility);
+  $category.trigger('contentChanged');
+  $category.material_select();
+}
 
 function blockAdblockUser() {
   if ($('.ad').height() < 50) {
