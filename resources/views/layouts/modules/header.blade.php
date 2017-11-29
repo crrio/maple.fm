@@ -35,7 +35,7 @@
                 <a class="nav-link" href="/statistics">Statistics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#markets">Markets</a>
+                <a class="nav-link modal-trigger" href="#markets">Markets</a>
               </li>
             </ul>
             <ul class="side-nav" id="mobile">
@@ -46,7 +46,7 @@
                 <a class="nav-link" href="/statistics">Statistics</a>
               </li>
               <li>
-                <a class="nav-link" href="#markets">Markets</a>
+                <a class="nav-link modal-trigger" href="#markets">Markets</a>
               </li>
             </ul>
           </div>
