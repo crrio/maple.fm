@@ -30,26 +30,38 @@
   </div>
 </div>
 
-    <input type="hidden" id="serverid" value="{{ $serverId }}">
-    <div class="table-responsive" style="padding:5px;">
-      <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover" id="search_results_table" width="100%">
-        <thead>
-            <tr>
-                <th class="sorting" style="min-width:10px;">Item</th>
-                <th class="sorting">Qty</th>
-                <th class="sorting">Bundle</th>
-                <th class="sorting">Price</th>
-                <th class="sorting">Ch</th>
-                <th class="sorting">Rm</th>
-                <th class="sorting">Shop</th>
-                <th class="sorting">Seller</th>
-                <th class="sorting">%</th>
-            </tr>
-        </thead>
-        <tbody id="search_results_body">
-        </tbody>
-      </table>
-    </div>
+<input type="hidden" id="serverid" value="{{ $serverId }}">
+
+<div class="col s12">
+  <select class="form-control input-sm" id="select-category">
+    <option value="">All Categories</option>
+    <option value="Equip">Equip</option>
+    <option value="Use">Use</option>
+    <option value="Etc">Etc</option>
+    <option value="Setup">Setup</option>
+  </select>
+  <select class="form-control input-sm hide" id="select-subcategory"></select>
+  <select class="form-control input-sm hide" id="select-detailcategory"></select>
+</div>
+<div class="table-responsive" style="padding:5px;">
+  <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover" id="search_results_table" width="100%">
+    <thead>
+      <tr>
+        <th class="sorting" style="min-width:10px;">Item</th>
+        <th class="sorting">Qty</th>
+        <th class="sorting">Bundle</th>
+        <th class="sorting">Price</th>
+        <th class="sorting">Ch</th>
+        <th class="sorting">Rm</th>
+        <th class="sorting">Shop</th>
+        <th class="sorting">Seller</th>
+        <th class="sorting">%</th>
+      </tr>
+    </thead>
+    <tbody id="search_results_body">
+    </tbody>
+  </table>
+</div>
 <div class="bottom-ad">
 <ins class="adsbygoogle"
      style="display:inline-block;width:728px;height:90px"
