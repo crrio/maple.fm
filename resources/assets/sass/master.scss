@@ -15,6 +15,10 @@ body {
     flex-direction: column;
 }
 
+header {
+  z-index: 1000;
+}
+
 main {
     flex: 1 0 auto;
 }
