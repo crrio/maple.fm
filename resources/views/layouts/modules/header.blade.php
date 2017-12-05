@@ -25,14 +25,11 @@
         <div class="nav-wrapper">
           <div class="container">
             <a class="brand-logo" href="/"><img src="/img/logo_transparent.png"/></a>
-            <span class="brand-logo hide-on-med-and-down" style="margin-left:70px;">| @yield('nav-title', 'Market') <a href="//github.com/crrio/maple.fm/commit/{{ exec('git rev-parse --short HEAD') }}" target="_blank"><span class="chip white-text" style="background:rgba(0,0,0,0.2);vertical-align:middle;">{{ exec('git rev-parse --short HEAD') }}</span></a></span>
+            <span class="brand-logo hide-on-med-and-down" style="margin-left:70px;">| @yield('nav-title', 'Market')</span>
             <a href="#" data-activates="mobile" class="button-collapse"><i class="fa fa-bars"></i></a>
             <ul id="left" class="right hide-on-med-and-down">
               <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/statistics">Statistics</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link modal-trigger" href="#markets">Markets</a>
@@ -41,9 +38,6 @@
             <ul class="side-nav" id="mobile">
               <li>
                 <a class="nav-link" href="/about">About</a>
-              </li>
-              <li>
-                <a class="nav-link" href="/statistics">Statistics</a>
               </li>
               <li>
                 <a class="nav-link modal-trigger" href="#markets">Markets</a>
